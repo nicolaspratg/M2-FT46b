@@ -1,0 +1,22 @@
+.container {
+    margin: 2%;
+    margin-left: 7%;
+    width: 80vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: solid #6d6875 4px;
+    background-color: #b5838d;
+  }
+  
+  .divNumbers {
+    border: solid 2px #6d6875;
+    background-color: #f0ead2;
+    width: 20vw;
+    margin: 1.5%;
+  }
+  
+  .divNumbers h2 {
+    align-items: center;
+    text-align: center;
+  }
