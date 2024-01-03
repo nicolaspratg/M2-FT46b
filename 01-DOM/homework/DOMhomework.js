@@ -57,6 +57,10 @@ function buildToDo(todo, index) {
   if (todo.complete === true) {
     toDoText.classList.add("completeText");
   }
+  toDoText.addEventListener("click", function(){
+    completeToDo(index);
+    displayToDos
+  })
   toDoShell.appendChild(toDoText);
   return toDoShell;
 }
@@ -104,6 +108,13 @@ function displayToDos() {
 
 function addToDo() {
   // Tu código acá:
+  const toDoInput = document.getElementById("toDoInput").value;
+  if(toDoInput.trim() !== ""){
+    const newToDo = new ToDo(toDoInput);
+    toDoItems.push(newToDo);
+    document.getElementById("toDoInput").value = ""
+    displayToDos();
+  }
 }
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
@@ -112,7 +123,8 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
-
+const addButton = document.getElementById("addButton");
+addButton.addEventListener("click", addToDo);
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
 // Todo Event Listener recibe como parámetro el objeto 'event' conteniendo un montón de información que incluye
@@ -127,8 +139,12 @@ function addToDo() {
 
 function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
-  //const index = event.target.id;
+  const index = event.target.id;
   // Tu código acá:
+if(index >= 0 && index < toDoItems.length){
+  toDoItems[index].completeToDo();
+  displayToDos();
+}
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
