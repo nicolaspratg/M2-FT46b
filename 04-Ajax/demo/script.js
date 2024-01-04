@@ -1,7 +1,7 @@
 const URL_BASE = "https://jsonplaceholder.typicode.com";
 const usersList = document.querySelector("#usersList");
 
-const crateListItems = (user) => {
+const createListItems = (user) => {
   const li = document.createElement("li");
   li.innerHTML = user.name;
   usersList.appendChild(li);
@@ -10,7 +10,7 @@ const crateListItems = (user) => {
 const showUsers = () => {
   // GET AJAX
   $.get(`${URL_BASE}/users`, (response) => {
-    response.forEach(crateListItems);
+    response.forEach(createListItems);
   });
 };
 
