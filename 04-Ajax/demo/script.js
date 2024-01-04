@@ -8,7 +8,6 @@ const createListItems = (user) => {
 };
 
 const showUsers = () => {
-  // GET AJAX
   $.get(`${URL_BASE}/users`, (response) => {
     response.forEach(createListItems);
   });
