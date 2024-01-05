@@ -1,9 +1,21 @@
-  
-var names = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+var names = [
+  "Domingo",
+  "Lunes",
+  "Martes",
+  "Miercoles",
+  "Jueves",
+  "Viernes",
+  "Sabado",
+];
 
-var toni = 'toni';
-var mati = 'mati';
 
-exports.aux = mati;
-exports.name = function name (number) { return names[number]; };
-exports.number = function number(name) { return names.indexOf(name); };
+export const name = (number) => names[number];
+// const name = (number) => names[number];
+
+export const number = (name) => names.indexOf(name);
+// const number = (name) => names.indexOf(name);
+
+// module.exports = {
+//   name,
+//   number,
+// };
